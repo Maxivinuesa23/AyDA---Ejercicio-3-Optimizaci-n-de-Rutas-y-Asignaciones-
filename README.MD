@@ -24,6 +24,9 @@ Se tienen 10 millones de datos enteros generados aleatoriamente en el rango [0, 
 
 - [Contacto](#contacto)
 
+## Ejecutable
+El ejecutable se encuentra en la carpeta "MiAplicacionTSP4", el mismo funciona en cualquier computadora ya que tiene instalado el JDK y el JRE necesarios para la correcta ejecución del mismo.
+
 ## Contacto
 
 Máximo Vinuesa - [@Linkedin](https://www.linkedin.com/in/maximo-vinuesa/) - [@Gmail](maxivinuesa23@gmail.com)
