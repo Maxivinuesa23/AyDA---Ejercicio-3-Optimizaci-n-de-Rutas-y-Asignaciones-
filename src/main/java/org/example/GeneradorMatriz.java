@@ -4,9 +4,7 @@ import java.util.Random;
 
 public class GeneradorMatriz {
     Random rand = new Random();
-    int min= 15;
-    int max= 15;
-    public int[][] generarmatriz(){
+    public int[][] generarmatriz(int min, int max){
         int[][] matrizciudades = new int[min][max];
 
         for(int i=0; i<min; i++){

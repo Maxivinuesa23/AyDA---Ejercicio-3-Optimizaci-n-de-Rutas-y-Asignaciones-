@@ -15,11 +15,12 @@ public class Main {
         long fin = 0;
         long memoriaUsada = 0;
         long duracion = 0;
+        int min = 15;
 
 
         GeneradorMatriz generarMatriz = new GeneradorMatriz();
 
-        int matrizciudades[][]= generarMatriz.generarmatriz();
+        int matrizciudades[][]= generarMatriz.generarmatriz(15, 15);
 
         Heuristica heuristica = new Heuristica();
         FuerzaBruta fuerzaBruta = new FuerzaBruta();
@@ -30,9 +31,10 @@ public class Main {
             System.out.println("*************************");
             System.out.println("*  Encontrar Caminos  *");
             System.out.println("* 1. Re-Generar Matriz 15x15 *");
-            System.out.println("* 2. Utilizar Algoritmo Heuristica   *");
-            System.out.println("* 3. Utilizar Fuerza Bruta   *");
-            System.out.println("* 4. Utilizar Divide Y Venceras Con Branch And Bound  *");
+            System.out.println("* 2. Re-Generar Matriz 5x5 (TESTING)*");
+            System.out.println("* 3. Utilizar Algoritmo Heuristica   *");
+            System.out.println("* 4. Utilizar Fuerza Bruta   *");
+            System.out.println("* 5. Utilizar Divide Y Venceras Con Branch And Bound  *");
             System.out.println("*************************");
             System.out.println("* 0. Salir*");
             opc = scc.nextInt();
@@ -40,7 +42,8 @@ public class Main {
             switch(opc){
                 case 1:
                     try {
-                        matrizciudades= generarMatriz.generarmatriz();
+                        matrizciudades= generarMatriz.generarmatriz(15, 15);
+                        min = 15;
                         System.out.println("Matriz generada!");
                         System.out.println("\nPresiona Enter para salir...");
                         System.in.read(); // Espera una tecla antes de terminar el programa
@@ -50,11 +53,23 @@ public class Main {
                     break;
 
                 case 2:
+                    try {
+                        matrizciudades= generarMatriz.generarmatriz(5, 5);
+                        min = 5;
+                        System.out.println("Matriz generada!");
+                        System.out.println("\nPresiona Enter para salir...");
+                        System.in.read(); // Espera una tecla antes de terminar el programa
+                    } catch (Exception e) {
+                        System.out.println("Error al crear la matriz");
+                    }
+                    break;
+
+                case 3:
                     inicio = System.nanoTime();
                     memoriaAntes = runtime.totalMemory() - runtime.freeMemory();
                     //*************************
 
-                    heuristica.buscarcamino(matrizciudades);
+                    heuristica.buscarcamino(matrizciudades, min);
 
                     //*************************
                     memoriaDespues = runtime.totalMemory() - runtime.freeMemory();
@@ -68,7 +83,7 @@ public class Main {
                     System.in.read(); // Espera una tecla antes de terminar el programa
                     break;
 
-                case 3:
+                case 4:
                     inicio = System.nanoTime();
                     memoriaAntes = runtime.totalMemory() - runtime.freeMemory();
                     //*************************
@@ -87,7 +102,7 @@ public class Main {
                     System.in.read(); // Espera una tecla antes de terminar el programa
                     break;
 
-                case 4:
+                case 5:
                     inicio = System.nanoTime();
                     memoriaAntes = runtime.totalMemory() - runtime.freeMemory();
                     //*************************

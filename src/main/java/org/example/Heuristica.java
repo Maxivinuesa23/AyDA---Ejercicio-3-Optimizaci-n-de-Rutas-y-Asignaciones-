@@ -3,8 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Heuristica {
-    int min = 15;
-    public void buscarcamino(int matrizciudades[][]){
+    public void buscarcamino(int matrizciudades[][], int min){
         boolean[] visitadas = new boolean[min];
         int ciudadActual = 0;
         int longitud= 0;
