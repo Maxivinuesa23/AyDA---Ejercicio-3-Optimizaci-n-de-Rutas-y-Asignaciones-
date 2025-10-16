@@ -1,4 +1,4 @@
-# Trabajo Práctico N° 5 Ejercicio 2 - Diseño Y Analisis De Algoritmo
+# Trabajo Práctico N° 5 Ejercicio 3 - Diseño Y Analisis De Algoritmo
 
 
 ## Descripción
